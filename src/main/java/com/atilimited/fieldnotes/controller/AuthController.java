@@ -31,4 +31,13 @@ public class AuthController {
     public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest req) {
         return ResponseEntity.ok(authService.login(req));
     }
+
+    @org.springframework.web.bind.annotation.PutMapping("/profile")
+    public ResponseEntity<AuthResponse> updateProfile(@RequestBody java.util.Map<String, String> body) {
+        String name = body.get("name");
+        String email = body.get("email");
+        String currentPassword = body.get("currentPassword");
+        String newPassword = body.get("newPassword");
+        return ResponseEntity.ok(authService.updateProfile(name, email, currentPassword, newPassword));
+    }
 }

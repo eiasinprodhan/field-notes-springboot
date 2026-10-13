@@ -1,8 +1,10 @@
 package com.atilimited.fieldnotes.model;
 
 public enum NoteStatus {
-    OPEN,        
-    IN_PROGRESS, 
-    RESOLVED,    
-    CLOSED       
+    PENDING,
+    IN_PROGRESS,
+    COMPLETED,
+    OPEN,
+    RESOLVED,
+    CLOSED
 }
